@@ -1,9 +1,35 @@
-Process Killer
-==============
-定期的に指定したプロセスを強制終了するツール。
+[English](README.md) | [日本語](README.ja.md)
 
-使い方
-------
+# Process Killer
 
-実行すると終了するまで対象プロセスの存在を監視します。  
-終了する場合はタスクマネージャーからプロセスをキルしてください。
+A tool to periodically kill specified processes.
+
+## Usage
+
+Set the target processes, build the solution with Visual Studio, and use the generated executable file.
+
+When the tool is launched, specified processes are periodically killed until terminated.
+To terminate the tool, kill the process from Task Manager.
+
+### Setting Target Process
+
+Set the filenames of the target processes to kill.
+
+```csharp
+private static readonly string[] ProcessFileNames =
+{
+    "notepad.exe",
+};
+```
+
+### Setting Interval
+
+Set the interval as needed. The default interval is 5 seconds.
+
+```csharp
+private static readonly TimeSpan Interval = TimeSpan.FromSeconds(5);
+```
+
+## License
+
+This software is licensed under the [Unlicense](LICENSE).
